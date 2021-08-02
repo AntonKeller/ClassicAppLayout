@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles/navBar.module.css'
 
-function NavBar() {
+export default function NavBar() {
     return(
         <nav className={styles.nav_bar}>
             <div className={styles.container_logo}>
