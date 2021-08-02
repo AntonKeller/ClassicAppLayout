@@ -1,0 +1,26 @@
+.presentation_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.logotype {
+  width: 60px;
+  height: 60px;
+  margin: 40px 0 10px 0;
+  background: url("./img/presentation_logo.png");
+  background-size: contain;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 30px;
+}
+
+.subTitle {
+  margin: 5px 0;
+}
+
+/*# sourceMappingURL=presentation.module.css.map */
