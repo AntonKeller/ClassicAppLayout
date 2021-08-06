@@ -1,0 +1,8 @@
+.tickets {
+  margin: 40px 0 40px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*# sourceMappingURL=ticketList.module.css.map */

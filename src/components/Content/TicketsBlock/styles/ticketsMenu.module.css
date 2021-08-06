@@ -1,0 +1,54 @@
+.wrapper_position {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tickets_block {
+  padding: 20px;
+  width: 80%;
+  font-family: "Hahmlet", serif;
+}
+
+.wrapper_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.title_block {
+  padding: 15px 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 28px;
+  padding: 10px 0;
+}
+
+.description {
+  font-size: 18px;
+  color: #3c3c3c;
+}
+
+.btn {
+  padding: 12px;
+  color: #3c3c3c;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #3c3c3c;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+.btn:hover {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+.btn:hover:active {
+  transform: scale(0.97);
+}
+
+/*# sourceMappingURL=ticketsMenu.module.css.map */
