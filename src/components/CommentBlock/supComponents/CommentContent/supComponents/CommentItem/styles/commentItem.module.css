@@ -1,0 +1,65 @@
+.item {
+  width: 380px;
+}
+
+.message {
+  margin: 10px 10px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.message_title {
+  text-align: center;
+  padding: 10px;
+  color: #9ec02d;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.message_text {
+  text-align: center;
+  padding: 5px;
+  font-size: 18px;
+  color: #a2a2a2;
+}
+
+.man {
+  margin: 10px 0 10px 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.name {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.man_img {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.img_1 {
+  background: url("./img/mini_ava_img_1.png");
+  background-size: cover;
+}
+
+.img_2 {
+  background: url("./img/mini_ava_img_2.png");
+  background-size: cover;
+}
+
+/*# sourceMappingURL=commentItem.module.css.map */

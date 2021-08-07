@@ -5,6 +5,7 @@
 }
 
 .left_panel, .right_panel {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +18,14 @@
 
 .right_panel {
   background-color: #f5f9eb;
+}
+
+.left_panel:hover {
+  background: linear-gradient(rgba(30, 30, 255, 0.3), rgba(30, 30, 40, 0.1), rgba(30, 30, 255, 0.3));
+}
+
+.right_panel:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
 .block_wrapper {
@@ -69,6 +78,7 @@
 
 .btn_find_left {
   background-color: #26a6d1;
+  z-index: 1;
 }
 .btn_find_left:hover {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
@@ -79,6 +89,7 @@
 
 .btn_find_right {
   background-color: #add136;
+  z-index: 1;
 }
 .btn_find_right:hover {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);

@@ -17,7 +17,6 @@ export default function TicketsBlock() {
                     </div>
                     <div className={styles.btn}>Become a member</div>
                 </div>
-
                 <TicketList />
             </div>
         </div>

@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr;
 }
 .left_panel, .right_panel{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,15 @@
 .right_panel{
   background-color: rgb(245, 249, 235);
 }
+
+.left_panel:hover{
+  background: linear-gradient(rgba(30, 30, 255, 0.3), rgba(30, 30, 40, 0.1), rgba(30, 30, 255, 0.3));
+}
+
+.right_panel:hover{
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
 .block_wrapper{
   width: 70%;
   display: flex;
@@ -60,6 +70,7 @@
 }
 .btn_find_left{
   background-color: rgb(38, 166, 209);
+  z-index: 1;
   &:hover{
     box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.3);
     &:active{
@@ -69,6 +80,7 @@
 }
 .btn_find_right{
   background-color:rgb(173, 209, 54);
+  z-index: 1;
   &:hover{
     box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.3);
     &:active{
