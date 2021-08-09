@@ -11,7 +11,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Header />
-      {/*<Banner />*/}
+      <Banner />
       {/*<Content />*/}
       {/*<FindMenu />*/}
       {/*<TicketsBlock />*/}

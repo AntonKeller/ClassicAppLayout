@@ -1,22 +1,29 @@
+.mode_blur{
+  filter: blur(5px);
+}
+
 .banner_container{
   overflow: hidden;
 }
 .banner{
+  z-index: 1;
+  width: 100%;
+  height: 570px;
+  margin: 60px 0 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  width: 100%;
-  height: 570px;
+
   background-image: linear-gradient(rgba(105, 105, 105, 0.4), rgba(94, 94, 94, 0.1)),
   url('./img/banner.png');
   background-size: cover;
-  transition: linear 800ms;
 }
 
 .banner__title{
-  padding: 10px 8px;
+  margin: 10px;
+  padding: 10px;
   font-size: 35px;
   font-weight: bold;
   color: #fff;
@@ -24,8 +31,8 @@
 }
 
 .banner__subTitle{
-  padding: 0 8px;
-  margin: 0 0 15px 0;
+  margin: 10px;
+  padding: 5px;
   font-size: 25px;
   font-weight: normal;
   color: #fff;
@@ -35,27 +42,31 @@
 .banner__btn{
   cursor: pointer;
   user-select: none;
-  margin: 20px 0;
-  padding: 15px 10px;
-  background-color: rgb(153, 200, 10);
-  font-size: 28px;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(153, 200, 10, 0);
+  border: 1px solid rgb(70,70,70);
+  font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  color: rgb(70,70,70);
   border-radius: 10px;
-}
-.banner__btn:active{
-  transform: scale(0.97);
+  &:hover{
+    background-color: rgb(180, 180, 180);
+    &:active{
+      transform: scale(0.97);
+    }
+  }
 }
 
-.banner .container_btn{
+.container_btn{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 80px;
+  justify-content: space-around;
+  margin: 60px 0;
 }
 .left_nav_btn, .right_nav_btn{
-  margin: 0 4px;
+  margin: 0 20px;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -70,4 +81,39 @@
 }
 .left_nav_btn:hover:active, .right_nav_btn:hover:active{
   transform: scale(0.9);
+}
+
+@media (max-width: 630px) {
+  .banner__title{
+    margin: 5px;
+    padding: 5px;
+  }
+  .banner__subTitle{
+    margin: 5px;
+  }
+  .banner__btn{
+    margin: 10px;
+    padding: 15px;
+  }
+  .container_btn{
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 630px) {
+  .banner__title, .banner__btn{
+    font-size: 25px;
+  }
+  .banner__subTitle{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 440px){
+  .banner__title, .banner__btn{
+    font-size: 18px;
+  }
+  .banner__subTitle{
+    font-size: 15px;
+  }
 }
