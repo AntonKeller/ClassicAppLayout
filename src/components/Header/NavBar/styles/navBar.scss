@@ -1,108 +1,147 @@
-@mixin click{
-  transform: scale(0.97);
-}
-
-
-//NAV BAR. HE IS WRAPPER FOR: LOGO, LINKS, BTN "LOGIN"
 .nav_bar{
-  height: 85px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: "logo navLinks login";
+  justify-items: center;
   align-items: center;
   background-color: white;
 }
 
+.drop_btn, .logo, .login, .item, .links{
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
 
-//NAVIGATE LINKS
-.container_links{
+.drop_btn{
+  grid-area: dropBtn;
+  display: none;
+  margin: 5px 20px;
+  width: 50px;
+  height: 50px;
+  background: url('./img/drop_btn_3.png');
+  background-size: cover;
+  border-radius: 8px;
+}
+.logo{
+  grid-area: logo;
+  width: 50px;
+  height: 50px;
+  background-image: url('./img/banana.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.links{
+  grid-area: navLinks;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .item{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(117, 121, 120);
+    border-bottom: 1px solid rgba(60, 60, 60, 0);
+    &:hover{
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(60, 60, 60, 0.8);
+      &:active{
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+
+.login{
+  grid-area: login;
+  justify-self: right;
+
+  width: 120px;
+  height: auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.0);
+  border: 2px solid rgba(120, 120, 120);
+  border-radius: 12px;
+  color: rgba(80, 80, 80);
+
+  &:hover{
+    box-shadow: 1px 1px 4px rgba(60, 60, 60, 0.5);
+    background: rgba(130, 130, 130);
+    color: #fff;
+    &:active{
+      box-shadow: 0px 0px 6px rgba(70, 194, 97);
+      color:  rgba(80, 80, 80);
+    }
+  }
+  .logSp{
+    font-size: 18px;
+    user-select: none;
+  }
+}
+
+//<990
+@media (max-width: 930px){
+  .nav_bar{
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+            "dropBtn logo login"
+            "navLinks navLinks navLinks";
+    justify-items: center;
+    align-items: center;
+  }
+
+  .drop_btn{
+    margin: 5px 15px;
+    justify-self: left;
+    display: block;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    &:hover{
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      &:active{
+        transform: scale(0.98);
+      }
+    }
+  }
 
   .links{
-    display: flex;
-    flex-direction: row;
+    margin: 15px 10px;
+    justify-self: left;
+    flex-direction: column;
     justify-content: center;
+    align-items: start;
+  }
+}
+@media (min-width: 425px) and (max-width: 930px){
+  .links{
+    align-items: start;
+  }
+}
+@media (max-width: 425px){
+  .links{
+    align-self: center;
+    justify-self: center;
     align-items: center;
-
-    .item{
-      padding: 6px 16px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 18px;
-      font-weight: bold;
-      color: rgb(117, 121, 120);
-
-      &:hover{
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        border-bottom: 1px solid rgba(70, 194, 97, 0.8);
-
-        &:active{
-          @include click;
-        }
-      }
-    }
-  }
-}
-
-
-
-
-//LOGOTYPE
-.container_logo{
-  width: 180px;
-  height: 60px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: center;
-
-  .logo{
-    width: 55px;
-    height: 55px;
-    background-image: url('./img/banana.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: linear 0.25s;
-
-    &:hover{
-      transform: scale(1.2);
-
-      &:active{
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
-
-
-//LOGIN BTN
-.container_login{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .login{
-    width: 95px;
-    height: auto;
-    padding: 4px 12px;
-    background: rgba(0, 0, 0, 0.0);
-    border: 2px solid rgba(70, 194, 97);
-    border-radius: 12px;
-    user-select: none;
-    cursor: pointer;
-    text-align: center;
-    font-size: 19px;
-    color: rgba(80, 80, 80);
-
-    &:hover{
-      //box-shadow: 2px 2px 12px rgba(70, 194, 97);
-      //border: 0px solid rgba(80, 80, 80);
-      box-shadow: 0px 0px 6px rgba(70, 194, 97);
-      &:active{
-        @include click;
-      }
-    }
   }
 }

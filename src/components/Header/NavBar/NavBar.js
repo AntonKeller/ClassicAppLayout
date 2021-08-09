@@ -2,22 +2,33 @@ import React from 'react'
 import styles from './styles/navBar.module.css'
 
 export default function NavBar() {
+
+    let dataLinks = [
+        {link_name: 'home', link_href: '/home'},
+        {link_name: 'how it works', link_href: '/works'},
+        {link_name: 'discover a project', link_href: '/project'},
+        {link_name: 'blog', link_href: '/blog'},
+        {link_name: 'find out more', link_href: '/findMore'},
+    ]
+
     return(
         <nav className={styles.nav_bar}>
-            <div className={styles.container_logo}>
-                <div className={styles.logo}></div>
+            <div className={styles.drop_btn}></div>
+            <div className={styles.logo} />
+            <div className={styles.links}>
+                {
+                    dataLinks.map(item => {
+                        return(
+                            <a href={item.link_href} className={styles.item}>
+                                {item.link_name}
+                            </a>
+                        )
+                    })
+                }
             </div>
-            <div className={styles.container_links}>
-                <div className={styles.links}>
-                    <a href="#" className={styles.item}>home</a>
-                    <a href="#" className={styles.item}>how it works</a>
-                    <a href="#" className={styles.item}>discover a project</a>
-                    <a href="#" className={styles.item}>blog</a>
-                    <a href="#" className={styles.item}>find out more</a>
-                </div>
-            </div>
-            <div className={styles.container_login}>
-                <div className={styles.login}>Login</div>
+
+            <div className={styles.login}>
+                <span className={styles.logSp}>Login</span>
             </div>
         </nav>
     )

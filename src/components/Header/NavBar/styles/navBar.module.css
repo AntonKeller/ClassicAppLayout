@@ -1,86 +1,141 @@
 .nav_bar {
-  height: 85px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: "logo navLinks login";
+  justify-items: center;
   align-items: center;
   background-color: white;
 }
 
-.container_links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container_links .links {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.container_links .links .item {
-  padding: 6px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: bold;
-  color: #757978;
-}
-.container_links .links .item:hover {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(70, 194, 97, 0.8);
-}
-.container_links .links .item:hover:active {
-  transform: scale(0.97);
+.drop_btn, .logo, .login, .item, .links {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.container_logo {
-  width: 180px;
-  height: 60px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: center;
+.drop_btn {
+  grid-area: dropBtn;
+  display: none;
+  margin: 5px 20px;
+  width: 50px;
+  height: 50px;
+  background: url("./img/drop_btn_3.png");
+  background-size: cover;
+  border-radius: 8px;
 }
-.container_logo .logo {
-  width: 55px;
-  height: 55px;
+
+.logo {
+  grid-area: logo;
+  width: 50px;
+  height: 50px;
   background-image: url("./img/banana.png");
   background-size: contain;
   background-repeat: no-repeat;
-  cursor: pointer;
-
   transition: all 0.5s ease;
   animation: rotate 3s linear infinite;
 }
+
 @keyframes rotate {
   from {
     transform: rotate(360deg);
   }
 }
-
-.container_login {
+.links {
+  grid-area: navLinks;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.container_login .login {
-  width: 95px;
-  height: auto;
-  padding: 4px 12px;
-  background: rgba(0, 0, 0, 0);
-  border: 2px solid #46c261;
-  border-radius: 12px;
-  user-select: none;
-  cursor: pointer;
+.links .item {
+  text-decoration: none;
+  text-transform: uppercase;
   text-align: center;
-  font-size: 19px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #757978;
+  border-bottom: 1px solid rgba(60, 60, 60, 0);
+}
+.links .item:hover {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(60, 60, 60, 0.8);
+}
+.links .item:hover:active {
+  transform: scale(0.9);
+}
+
+.login {
+  grid-area: login;
+  justify-self: right;
+  width: 120px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #787878;
+  border-radius: 12px;
   color: #505050;
 }
-.container_login .login:hover {
-  box-shadow: 0px 0px 6px #46c261;
+.login:hover {
+  box-shadow: 1px 1px 4px rgba(60, 60, 60, 0.5);
+  background: #828282;
+  color: #fff;
 }
-.container_login .login:hover:active {
-  transform: scale(0.97);
+.login:hover:active {
+  box-shadow: 0px 0px 6px #46c261;
+  color: #505050;
+}
+.login .logSp {
+  font-size: 18px;
+  user-select: none;
+}
+
+@media (max-width: 930px) {
+  .nav_bar {
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "dropBtn logo login" "navLinks navLinks navLinks";
+    justify-items: center;
+    align-items: center;
+  }
+
+  .drop_btn {
+    margin: 5px 15px;
+    justify-self: left;
+    display: block;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  .drop_btn:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  .drop_btn:hover:active {
+    transform: scale(0.98);
+  }
+
+  .links {
+    margin: 15px 10px;
+    justify-self: left;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
+@media (min-width: 425px) and (max-width: 930px) {
+  .links {
+    align-items: start;
+  }
+}
+@media (max-width: 425px) {
+  .links {
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=navBar.module.css.map */
