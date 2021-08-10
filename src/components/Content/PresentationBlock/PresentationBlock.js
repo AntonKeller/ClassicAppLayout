@@ -9,11 +9,9 @@ export default function PresentationBlock() {
                 Presentation
             </h4>
             <p className={styles.subTitle}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, placeat.
-            </p>
-            <p className={styles.subTitle}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veritatis nihil
-                aliquam.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Adipisci aliquid explicabo facilis labore porro rem rerum, ut voluptatem?
+                A corporis illo minus mollitia odio quasi sed temporibus, tenetur totam unde.
             </p>
         </div>
     )

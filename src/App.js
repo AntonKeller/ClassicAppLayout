@@ -12,10 +12,12 @@ function App() {
     <div className={styles.app}>
       <Header />
       <Banner />
-      {/*<Content />*/}
-      {/*<FindMenu />*/}
-      {/*<TicketsBlock />*/}
-      {/*<CommentBlock />*/}
+      <Content />
+
+
+      <FindMenu />
+      <TicketsBlock />
+      <CommentBlock />
     </div>
   );
 }

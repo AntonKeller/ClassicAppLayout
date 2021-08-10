@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styles from './styles/content.module.css'
 import PresentationBlock from "./PresentationBlock/PresentationBlock";
 import TabsMenu from "./TabsMenu/TabsMenu";
