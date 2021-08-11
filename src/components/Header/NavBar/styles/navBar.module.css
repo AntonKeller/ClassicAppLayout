@@ -1,4 +1,5 @@
 .nav_bar {
+  z-index: 101;
   width: 100%;
   height: auto;
   display: grid;
@@ -9,7 +10,7 @@
   background-color: white;
 }
 
-.drop_btn, .logo, .login, .item, .links {
+.drop_btn, .logo, .login {
   margin: 5px;
   padding: 5px;
   cursor: pointer;
@@ -42,30 +43,6 @@
     transform: rotate(360deg);
   }
 }
-.links {
-  grid-area: navLinks;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.links .item {
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #757978;
-  border-bottom: 1px solid rgba(60, 60, 60, 0);
-}
-.links .item:hover {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(60, 60, 60, 0.8);
-}
-.links .item:hover:active {
-  transform: scale(0.9);
-}
-
 .login {
   grid-area: login;
   justify-self: right;
@@ -96,7 +73,6 @@
 
 @media (max-width: 930px) {
   .nav_bar {
-    height: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas: "dropBtn logo login" "navLinks navLinks navLinks";
@@ -115,26 +91,6 @@
   }
   .drop_btn:hover:active {
     transform: scale(0.98);
-  }
-
-  .links {
-    margin: 15px 10px;
-    justify-self: left;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-}
-@media (min-width: 425px) and (max-width: 930px) {
-  .links {
-    align-items: start;
-  }
-}
-@media (max-width: 425px) {
-  .links {
-    align-self: center;
-    justify-self: center;
-    align-items: center;
   }
 }
 

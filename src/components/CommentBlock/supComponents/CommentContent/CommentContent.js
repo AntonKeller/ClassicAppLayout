@@ -19,12 +19,14 @@ export default function CommentContent() {
             numImg: 1
         }
     ]
+
     return(
         <div className={styles.comment_content}>
             {
                 peopleComments.map(item => {
                     return(
-                        <CommentItem title={item.title}
+                        <CommentItem key={[item.text,item.name].join('')}
+                                title={item.title}
                                      text={item.text}
                                      name={item.name}
                                      numImg={item.numImg} />

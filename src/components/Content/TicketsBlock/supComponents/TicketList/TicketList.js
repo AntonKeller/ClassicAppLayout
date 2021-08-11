@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles/ticketList.module.css'
 import Ticket from "../Ticket/Ticket";
 
-const tickets = [
+const dataTickets = [
     {
         stickerName: 'From GBP 3600',
         contentTitle: 'Ontario Tower , LONDON',
@@ -39,10 +39,10 @@ export default function TicketList() {
     return(
         <div className={styles.tickets}>
             {
-                tickets.map(item => {
+                dataTickets.map(item => {
                     return (
                         <Ticket
-                            key = {item}
+                            key = {Object.values(item).join('')}
                             stickerName={item.stickerName}
                             contentTitle={item.contentTitle}
                             description={item.description}
