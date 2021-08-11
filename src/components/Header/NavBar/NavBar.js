@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './styles/navBar.module.css'
 import ListLinks from "./supComponents/ListLinks";
 
@@ -12,15 +12,25 @@ export default function NavBar() {
         {link_name: 'find out more', link_href: '/findMore'},
         ])
 
+    let [blockLinksVisible, setBlockLinksVisible] = useState(true)
+
+    let widthMatch = window.matchMedia("(max-width: 930px)")
+
     function dropBtnHandler() {
-        console.log('ds')
+        setBlockLinksVisible(!blockLinksVisible)
     }
+
+    useEffect(() => {
+        widthMatch.addEventListener('change', e =>{
+            setBlockLinksVisible(!e.matches)
+        })
+    })
 
     return(
         <nav className={styles.nav_bar}>
             <div onClick={dropBtnHandler} className={styles.drop_btn}></div>
             <div className={styles.logo} />
-            <ListLinks dataLinks = {dataLinks} />
+            <ListLinks dataLinks = {dataLinks} visible={blockLinksVisible} />
             <div className={styles.login}>
                 <span className={styles.logSp}>Login</span>
             </div>
