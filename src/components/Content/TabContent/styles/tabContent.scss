@@ -6,11 +6,7 @@
           "img text";
   grid-gap: 15px;
   width: 70%;
-  margin: 10px 0;
-
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
+  margin: 35px 0;
 }
 .img{
   grid-area: img;
@@ -48,11 +44,3 @@
     text-align: center;
   }
 }
-//@media (max-width: 670px){
-//  .tab_title{
-//    font-size: 20px;
-//  }
-//  .tab_title{
-//
-//  }
-//}

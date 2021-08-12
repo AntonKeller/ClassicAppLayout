@@ -4,7 +4,7 @@
   grid-template-areas: "img title" "img text";
   grid-gap: 15px;
   width: 70%;
-  margin: 10px 0;
+  margin: 35px 0;
 }
 
 .img {

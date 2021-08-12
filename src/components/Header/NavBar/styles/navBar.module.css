@@ -45,7 +45,7 @@
 }
 .login {
   grid-area: login;
-  justify-self: right;
+  justify-self: center;
   width: 100px;
   height: auto;
   display: flex;

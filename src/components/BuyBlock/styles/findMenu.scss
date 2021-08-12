@@ -1,0 +1,143 @@
+.buy_block{
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.buy_block, .buy_item{
+  width: 100%;
+  height: auto;
+}
+
+.buy_item{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+          'ic ti ti'
+          'ic tx tx'
+          'ic bt bt';
+
+  border: 1px solid rgba(100, 100, 100, 1);
+  &:hover{
+    z-index: 1;
+    box-shadow:
+            1px 1px 6px rgba(100, 100, 100, 0.4),
+            -1px -1px 6px rgba(100, 100, 100, 0.4);
+  }
+}
+
+.item_mode_red{
+  background: linear-gradient(
+                  rgba(255, 60, 0, 0.5),
+                  rgba(255,255,255, 0.8),
+                  rgba(255, 60, 0, 0.5)) rgba(0,0,0, 0.3);
+  &:hover{
+    z-index: 1;
+    box-shadow:
+            1px 1px 6px rgba(255, 60, 0, 0.3),
+            -1px -1px 6px rgba(255, 60, 0, 0.3);
+  }
+}
+
+.image_block{
+  grid-area: ic;
+  background: #3c3c3c;
+  align-self: center;
+  justify-self: center;
+}
+
+.title{
+  margin-top: 10px;
+  align-self: center;
+  justify-self: start;
+  grid-area: ti;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.text{
+  grid-area: tx;
+  align-self: center;
+  justify-self: start;
+  padding: 5px 0;
+  width: 80%;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.button{
+  grid-area: bt;
+  align-self: center;
+  justify-self: start;
+  width: 40%;
+  height: auto;
+  margin: 5px 0;
+  padding: 8px 12px;
+  background: #3c3c3c;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(60, 60, 60, 0.5),
+  -1px -1px 2px rgba(60, 60, 60, 0.5);
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  &:active{
+    transform: scaleX(0.97);
+  }
+}
+
+.img_1{
+  background: url('./img/left_panel_img.png') no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+}
+.img_2{
+  background: url('./img/right_panel_img.png') no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 800px) {
+  .buy_block{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .button{
+    margin: 5px;
+    width: 50%
+  }
+}
+
+@media (max-width: 700px){
+  .buy_item {
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+            'ti ti ti'
+            'ic tx tx'
+            'bt bt bt';
+  }
+  .button, .title{
+    justify-self: center;
+  }
+  .title{
+    font-size: 20px;
+  }
+  .text{
+    font-size: 16px;
+  }
+  .button{
+    font-size: 14px;
+  }
+}
